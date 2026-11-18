@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PAPUSZKA — Industrial Design</title>
+  <link rel="icon" href="assets/symbol.svg">
+  <link rel="preload" href="assets/plex-sans.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="stylesheet" href="home.css">
+  <script src="navigation.js" defer></script>
+  <script src="home.js" defer></script>
+</head>
+<body id="top">
+  <a class="skip" href="#main">Skip to content</a>
+  <header>
+    <div class="bar">
+      <a class="brand" href="#top" aria-label="PAPUSZKA home"><img src="assets/symbol.svg" width="25" height="25" alt="">PAPUSZKA</a>
+      <nav id="navigation" aria-label="Primary">
+        <a href="#work">Work</a><span aria-disabled="true">About</span><span aria-disabled="true">Contact</span>
+      </nav>
+      <button id="theme" aria-label="Switch to dark theme">Dark</button>
+      <button id="menu" aria-expanded="false" aria-controls="navigation">Menu</button>
+    </div>
+    <div class="progress" aria-hidden="true"></div>
+  </header>
+  <main id="main" tabindex="-1">
+    <section class="manifesto" aria-labelledby="manifesto">
+      <h1 id="manifesto" class="measured-title"><span>Considered</span> <span>forms</span> <span>for</span> <span>everyday</span> <span>use<b class="period"><i class="period-character">.</i><i class="radius-note" aria-hidden="true"></i></b></span><i class="dimension width-note" aria-hidden="true"></i><i class="dimension height-note" aria-hidden="true"></i></h1>
+      <p>Industrial design, from product concept to 3D visualization.</p>
+      <a href="#work">Explore selected work ↓</a>
+    </section>
+    <section class="feature" aria-labelledby="featured">
+      <h2 class="label" id="featured">Featured Project</h2>
+      <div class="feature-layout">
+        <div class="work-image featured-image">
+          <img class="render" src="assets/lamp.png" width="718" height="513" alt="Illuminated ribbed table lamp on a stone plinth.">
+          <div class="frame-width" aria-hidden="true"><span></span></div>
+          <span class="corner-radius" aria-hidden="true"><span></span></span>
+          <div class="frame-height" aria-hidden="true"><span></span></div>
+        </div>
+        <div class="details">
+          <div><p class="category">Lighting</p><h3>Ribbed lamp</h3></div>
+          <p class="description">A study in how a ribbed surface shapes both the lamp’s form and its light.</p>
+          <a class="action" href="ribbed-lamp.html">View project →</a>
+        </div>
+      </div>
+    </section>
+    <section id="work" tabindex="-1" aria-labelledby="selected">
+      <div class="row"><h2 id="selected">Selected Work</h2><span class="action" aria-disabled="true">View all ↗</span></div>
+      <div class="grid">
+        <figure><div class="work-image"><img class="render" src="assets/organizer.png" width="612" height="437" alt="Illustrative render of the desk organizer."><div class="frame-width" aria-hidden="true"><span></span></div></div><figcaption><h3>Desk organizer</h3><p>Desk accessories</p></figcaption></figure>
+        <figure><div class="work-image"><img class="render" src="assets/hub.png" width="612" height="437" alt="Illustrative render of the modular hub."><div class="frame-width" aria-hidden="true"><span></span></div></div><figcaption><h3>Modular hub</h3><p>Consumer electronics</p></figcaption></figure>
+      </div>
+    </section>
+  </main>
+  <footer class="row"><a href="#top">Back to top ↑</a><span class="action" aria-disabled="true">Contact →</span></footer>
+</body>
+</html>

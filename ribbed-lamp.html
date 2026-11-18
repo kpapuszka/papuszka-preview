@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ribbed lamp — PAPUSZKA</title>
+  <link rel="icon" href="assets/symbol.svg">
+  <link rel="preload" href="assets/plex-sans.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="stylesheet" href="home.css">
+  <script src="navigation.js" defer></script>
+  <link rel="stylesheet" href="project.css">
+  <script src="home.js" defer></script>
+  <script src="project.js" defer></script>
+  <script src="lamp-study.js" defer></script>
+</head>
+<body id="top">
+  <a class="skip" href="#main">Skip to content</a>
+  <header>
+    <div class="bar">
+      <a class="brand" href="./" aria-label="PAPUSZKA home"><img src="assets/symbol.svg" width="25" height="25" alt="">PAPUSZKA</a>
+      <nav id="navigation" aria-label="Primary">
+        <a href="./#work">Work</a><span aria-disabled="true">About</span><span aria-disabled="true">Contact</span>
+      </nav>
+      <button id="theme" aria-label="Switch to dark theme">Dark</button>
+      <button id="menu" aria-expanded="false" aria-controls="navigation">Menu</button>
+    </div>
+    <div class="progress" aria-hidden="true"></div>
+  </header>
+  <main id="main" class="case-study" tabindex="-1">
+    <div class="project-intro">
+      <a href="./#work">← Back to work</a>
+      <h1 class="measured-title"><span>Ribbed</span> <span>lamp</span><i class="dimension width-note" aria-hidden="true"></i><i class="dimension height-note" aria-hidden="true"></i></h1>
+      <p class="project-meta">Lighting / Product concept</p>
+    </div>
+    <figure class="project-hero">
+      <div class="work-image featured-image">
+        <img class="render" src="assets/lamp.png" width="1280" height="960" alt="Warm light glows between the vertical ribs of a rounded table lamp on a stone plinth.">
+        <div class="frame-width" aria-hidden="true"><span></span></div>
+        <div class="frame-height" aria-hidden="true"><span></span></div>
+        <span class="corner-radius" aria-hidden="true"><span></span></span>
+      </div>
+      <figcaption>Concept visualization</figcaption>
+    </figure>
+    <section id="form-study" class="object-study" aria-labelledby="study-title">
+      <div class="study-head">
+        <h2 id="study-title">Form study</h2>
+        <div class="study-switch" role="group" aria-label="Object view">
+          <button type="button" aria-pressed="true" data-view="model">3D model</button>
+          <button type="button" aria-pressed="false" data-view="drawing">Technical drawing</button>
+        </div>
+      </div>
+      <div class="study-stage" id="model-panel">
+        <canvas tabindex="0" aria-label="Conceptual 3D model of the ribbed lamp" aria-describedby="orbit-help"></canvas>
+        <div class="study-controls"><span id="orbit-help">Drag or use arrow keys to rotate</span><button type="button" id="reset-view">Reset view</button></div>
+      </div>
+      <div class="study-stage" id="drawing-panel" hidden>
+        <svg viewBox="0 0 440 264" role="img" aria-labelledby="drawing-title drawing-desc">
+          <title id="drawing-title">Ribbed lamp — orthographic views</title>
+          <desc id="drawing-desc">Front and top projections of the illustrative model. Dimensions are proportional, with the total height set to 100.</desc>
+          <g class="drawing-geometry"></g>
+        </svg>
+        <p class="drawing-key">Relative dimensions · H = 100</p>
+      </div>
+      <p class="study-caption">Illustrative reconstruction from the concept render.</p>
+    </section>
+    <section class="project-section">
+      <h2>Concept</h2>
+      <p>What if the shade and the base shared a single outline? Here, vertical ribs run from the crown to the foot. Their changing profile gives the lamp a broad body and a narrow place to meet the table.</p>
+    </section>
+    <section class="project-section">
+      <h2>Process</h2>
+      <p>Follow one rib down the shade. Near the middle it runs almost straight. Towards the foot it turns inward, bringing the ribs closer together. That change in spacing gives the eye a way to read the curve.</p>
+    </section>
+    <section class="project-section">
+      <h2>Outcome</h2>
+      <p>In the visualization, the brightest bands sit between the ribs. The outer edges stay in shadow, so the shape remains legible even where the shade glows. A physical light test would show how closely the real object follows this study.</p>
+    </section>
+  </main>
+  <footer class="row"><a href="./">PAPUSZKA</a><a href="./#work">Back to work →</a></footer>
+</body>
+</html>
