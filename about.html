@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>About — PAPUSZKA</title>
+  <link rel="icon" href="assets/symbol.svg">
+  <link rel="preload" href="assets/plex-sans.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="stylesheet" href="home.css">
+  <script src="navigation.js" defer></script>
+  <link rel="stylesheet" href="about.css">
+  <script src="about.js" defer></script>
+  <script src="home.js?v=2" defer></script>
+</head>
+<body id="top">
+  <a class="skip" href="#main">Skip to content</a>
+  <header>
+    <div class="bar">
+      <a class="brand" href="index.html" aria-label="PAPUSZKA home"><img src="assets/symbol.svg" width="25" height="25" alt="">PAPUSZKA</a>
+      <nav id="navigation" aria-label="Primary">
+        <a href="work.html">Work</a><a href="about.html" aria-current="page">About</a><a href="mailto:k.papuszka@gmail.com">Contact</a>
+      </nav>
+      <button id="theme" aria-label="Switch to dark theme">Dark</button>
+      <button id="menu" aria-expanded="false" aria-controls="navigation">Menu</button>
+    </div>
+    <div class="progress" aria-hidden="true"></div>
+  </header>
+  <main id="main" tabindex="-1">
+    <h1 class="measured-title"><span>About</span><i class="dimension width-note" aria-hidden="true"></i><i class="dimension height-note" aria-hidden="true"></i></h1>
+    <section class="about-profile" aria-labelledby="designer">
+      <div class="about-copy">
+        <h2 id="designer">I’m Kacper Papuszka.</h2>
+        <p class="about-lead">I design lighting, desk accessories and everyday electronics in Szczecin, Poland.</p>
+        <p>I use CAD models to explore an object’s proportions, then render it to see what light reveals about its surface. With the Ribbed lamp, I was interested in one curve in particular: how a wide shade could narrow into a foot without a visible join.</p>
+        <a href="work.html">Explore my work →</a>
+      </div>
+      <div class="work-image portrait-measure">
+        <div class="portrait-frame">
+          <img class="about-image" src="assets/kacper-papuszka.jpg" width="1402" height="1122" alt="Portrait of Kacper Papuszka.">
+        </div>
+        <div class="frame-width" aria-hidden="true"><span></span></div>
+        <div class="frame-height" aria-hidden="true"><span></span></div>
+      </div>
+    </section>
+    <div class="about-background">
+      <section aria-labelledby="education">
+        <h2 id="education">Education</h2>
+        <dl class="education-list">
+          <dt>2025</dt><dd>Bachelor of Engineering in Teleinformatics</dd>
+          <dt>2026 – present</dt><dd>Master’s studies in Management and Production Engineering</dd>
+        </dl>
+        <p class="school">West Pomeranian University of Technology in Szczecin</p>
+        <p><a href="assets/kacper-papuszka-cv.pdf">View CV (PDF) →</a></p>
+      </section>
+      <section aria-labelledby="currently">
+        <h2 id="currently">Currently</h2>
+        <p>I combine part-time graduate studies with an internship at PACO Engineering, where I help organise project documentation. In my own design work, I’m exploring lighting and desktop objects through CAD models and renders.</p>
+      </section>
+    </div>
+    <section aria-labelledby="tools-title">
+      <div class="tools-heading"><h2 id="tools-title">Tools I use</h2><button type="button" id="tool-motion" hidden>Pause motion</button></div>
+      <div class="tools-band">
+        <div class="tools-track">
+          <ul class="tools-list">
+            <li><img src="assets/tools/blender.png" alt="" width="48" height="48"><span>Blender<small>Rendering</small></span></li>
+            <li><img src="assets/tools/fusion.png" alt="" width="48" height="48"><span>Fusion 360<small>CAD modeling</small></span></li>
+            <li><img src="assets/tools/procreate.jpg" alt="" width="48" height="48"><span>Procreate<small>Sketching</small></span></li>
+            <li><img src="assets/tools/procreate-dreams.jpg" alt="" width="48" height="48"><span>Procreate Dreams<small>Motion studies</small></span></li>
+            <li><img src="assets/tools/affinity.png" alt="" width="48" height="48"><span>Affinity<small>Graphic design</small></span></li>
+            <li><img src="assets/tools/figma.png" alt="" width="48" height="48"><span>Figma<small>Interface design</small></span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer">
+    <div class="footer-groups">
+      <div>
+        <a class="footer-wordmark" href="index.html">PAPUSZKA</a>
+        <p>Industrial design · Szczecin, Poland</p>
+      </div>
+      <div>
+        <h2><a href="work.html">Selected work</a></h2>
+        <ul>
+          <li><a href="ribbed-lamp.html">Ribbed lamp</a></li>
+          <li><a href="desk-organizer.html">Desk organizer</a></li>
+          <li><a href="modular-hub.html">Modular hub</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Contact</h2>
+        <a href="mailto:k.papuszka@gmail.com">k.papuszka@gmail.com</a>
+      </div>
+    </div>
+    <div class="footer-base">
+      <small>© 2026 Kacper Papuszka</small>
+      <a href="#top">Back to top ↑</a>
+    </div>
+  </footer>
+</body>
+</html>

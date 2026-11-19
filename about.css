@@ -1,0 +1,82 @@
+.measured-title { justify-self: start; }
+nav [aria-current="page"] { text-decoration: underline; text-underline-offset: .2em; }
+/* Keep the full-width tool strip from sizing the content column. */
+main { grid-template-columns: minmax(0, 1fr); }
+.about-profile { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); align-items: center; gap: clamp(24px, 5vw, 76px); border-top: 1px solid var(--line); padding-top: 24px; }
+.about-copy { display: grid; justify-items: start; gap: 18px; }
+.about-copy h2 { font-size: clamp(1.75rem, 3vw, 2.75rem); line-height: 1.12; letter-spacing: -.025em; }
+.about-copy p { max-width: 48ch; line-height: 1.55; }
+.about-lead { font-size: 1.2rem; }
+.about-image { display: block; width: 100%; height: auto; }
+@media (max-width: 650px) {
+  .about-profile { grid-template-columns: minmax(0, 1fr); }
+}
+
+.portrait-frame { position: relative; overflow: hidden; }
+.about-image { transform: scale(1.04); transform-origin: 50% 42%; }
+@media (prefers-reduced-motion: no-preference) {
+  .portrait-frame.is-ready .about-image { transform: scale(1); }
+  .portrait-frame.is-captured .about-image {
+    animation: portrait-zoom 1.25s cubic-bezier(.2,.7,.25,1) both;
+  }
+  .portrait-frame.is-captured::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: #fff9ed;
+    animation: portrait-flash 600ms 280ms both;
+  }
+  @keyframes portrait-flash {
+    0%, 100% { opacity: 0; }
+    12% { opacity: .42; }
+  }
+  @keyframes portrait-zoom {
+    from { transform: scale(1); }
+    to { transform: scale(1.04); }
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .portrait-measure .frame-width { inset: auto 0 -14px; }
+  /* On a tall screen the whole page can fit without a scroll gesture. */
+  .portrait-measure.fits-screen:has(.is-captured) :is(.frame-width, .frame-height) {
+    opacity: 1;
+    transition-delay: .7s;
+  }
+  .portrait-measure.fits-screen:has(.is-captured) .frame-width::before,
+  .portrait-measure.fits-screen:has(.is-captured) .frame-width::after {
+    animation: draw-frame .65s .7s ease-out backwards;
+  }
+  .portrait-measure.fits-screen:has(.is-captured) .frame-height::before,
+  .portrait-measure.fits-screen:has(.is-captured) .frame-height::after {
+    animation: draw-height .65s .7s ease-out backwards;
+  }
+}
+
+html { container-type: inline-size; }
+.about-background { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(32px, 6vw, 96px); }
+.about-background section, .tools-heading { border-top: 1px solid var(--line); padding-top: 16px; }
+.about-background h2, .tools-heading h2 { font-size: 1.65rem; }
+.about-background p { max-width: 54ch; margin-top: 18px; line-height: 1.55; }
+.education-list { display: grid; grid-template-columns: auto 1fr; gap: 12px 20px; margin: 20px 0 0; }
+.education-list dt, .school, .tools-list small { font: 400 .8rem/1.5 var(--mono); color: var(--secondary); }
+.education-list dd { margin: 0; }
+.tools-heading { display: flex; align-items: center; justify-content: space-between; }
+.tools-band { margin: 20px calc(50% - 50cqw) 0; overflow: hidden; border-block: 1px solid var(--line); }
+.tools-track { display: flex; }
+.tools-list { list-style: none; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-around; gap: 24px; padding: 24px; margin: 0; width: 100%; box-sizing: border-box; }
+.tools-list li { display: flex; align-items: center; gap: 10px; white-space: nowrap; }
+.tools-list small { display: block; }
+.tools-list img { object-fit: contain; border-radius: 10px; }
+.tools-list[aria-hidden] { display: none; }
+@media (prefers-reduced-motion: no-preference) {
+  .tools-band.is-looping .tools-track { width: max-content; animation: tool-scroll 34s linear infinite; }
+  .tools-band.is-looping .tools-list { display: flex; width: auto; min-width: 100cqw; flex-wrap: nowrap; gap: 48px; }
+  .tools-band.is-paused .tools-track { animation-play-state: paused; }
+  @keyframes tool-scroll { to { transform: translateX(-50%); } }
+}
+@media (max-width: 650px) {
+  .about-background { grid-template-columns: 1fr; }
+  .tools-list { justify-content: flex-start; }
+}
