@@ -283,3 +283,4 @@ footer a { font-weight: 600; font-size: .875rem; }
   .grid { gap: 32px; }
 }
 @media (prefers-reduced-motion: reduce) { .progress { display: none; } }
+.selected-link { display: block; color: inherit; }

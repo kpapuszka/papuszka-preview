@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Modular hub — PAPUSZKA</title>
+  <link rel="icon" href="assets/symbol.svg">
+  <link rel="preload" href="assets/plex-sans.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="stylesheet" href="home.css">
+  <script src="navigation.js" defer></script>
+  <link rel="stylesheet" href="project.css">
+  <script src="home.js" defer></script>
+  <script src="project.js" defer></script>
+  <script src="study-controls.js" defer></script>
+  <script src="accessory-study.js" defer></script>
+</head>
+<body id="top">
+  <a class="skip" href="#main">Skip to content</a>
+  <header>
+    <div class="bar">
+      <a class="brand" href="index.html" aria-label="PAPUSZKA home"><img src="assets/symbol.svg" width="25" height="25" alt="">PAPUSZKA</a>
+      <nav id="navigation" aria-label="Primary">
+        <a href="work.html">Work</a><span aria-disabled="true">About</span><span aria-disabled="true">Contact</span>
+      </nav>
+      <button id="theme" aria-label="Switch to dark theme">Dark</button>
+      <button id="menu" aria-expanded="false" aria-controls="navigation">Menu</button>
+    </div>
+    <div class="progress" aria-hidden="true"></div>
+  </header>
+  <main id="main" class="case-study" tabindex="-1">
+    <div class="project-intro">
+      <a href="work.html">← Back to work</a>
+      <h1 class="measured-title"><span>Modular</span> <span>hub</span><i class="dimension width-note" aria-hidden="true"></i><i class="dimension height-note" aria-hidden="true"></i></h1>
+      <p class="project-meta">Consumer electronics / Product concept</p>
+    </div>
+    <figure class="project-hero">
+      <div class="work-image featured-image">
+        <img class="render" src="assets/hub.png" width="1280" height="960" alt="A silver enclosure wraps around a dark front panel with a row of ports.">
+        <div class="frame-width" aria-hidden="true"><span></span></div>
+        <div class="frame-height" aria-hidden="true"><span></span></div>
+        <span class="corner-radius" aria-hidden="true"><span></span></span>
+      </div>
+      <figcaption>Concept visualization</figcaption>
+    </figure>
+    <section id="form-study" class="object-study" aria-labelledby="study-title">
+      <div class="study-head">
+        <h2 id="study-title">Form study</h2>
+        <div class="study-switch" role="group" aria-label="Object view">
+          <button type="button" aria-pressed="true" data-view="model">3D model</button>
+          <button type="button" aria-pressed="false" data-view="drawing">Technical drawing</button>
+        </div>
+      </div>
+      <div class="study-stage" id="model-panel">
+        <canvas data-object="hub" tabindex="0" aria-label="Conceptual 3D model of the modular hub" aria-describedby="orbit-help"></canvas>
+        <div class="study-controls"><span id="orbit-help">Drag or use arrow keys to rotate</span><button type="button" id="reset-view">Reset view</button></div>
+      </div>
+      <div class="study-stage" id="drawing-panel" hidden>
+        <svg viewBox="0 0 440 264" role="img" aria-labelledby="drawing-title drawing-desc">
+          <title id="drawing-title">Modular hub — orthographic views</title>
+          <desc id="drawing-desc">Front and top projections of the illustrative model. Dimensions are proportional, with the overall width set to 100.</desc>
+          <g class="drawing-geometry"></g>
+        </svg>
+        <p class="drawing-key">Relative dimensions · W = 100</p>
+      </div>
+      <p class="study-caption">Illustrative reconstruction from the concept render.</p>
+    </section>
+    <section class="project-section">
+      <h2>Concept</h2>
+      <p>A row of connectors gives this desktop hub its orientation. The dark front panel faces the user, while the silver shell turns the corner into a quieter side surface.</p>
+    </section>
+    <section class="project-section">
+      <h2>Process</h2>
+      <p>The form study brings three details together: the radius of the enclosure, the inset around the panel and the spacing between port openings. The top view makes the footprint easy to compare with the front elevation.</p>
+    </section>
+    <section class="project-section">
+      <h2>Outcome</h2>
+      <p>The continuous top surface keeps attention on the silhouette. On the front face, a narrow silver border frames the ports and makes their alignment visible.</p>
+    </section>
+  </main>
+  <footer class="row"><a href="index.html">PAPUSZKA</a><a href="work.html">Back to work →</a></footer>
+</body>
+</html>

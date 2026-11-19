@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Work — PAPUSZKA</title>
+  <link rel="icon" href="assets/symbol.svg">
+  <link rel="preload" href="assets/plex-sans.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="stylesheet" href="home.css">
+  <script src="navigation.js" defer></script>
+  <link rel="stylesheet" href="work.css">
+  <script src="home.js?v=2" defer></script>
+</head>
+<body id="top">
+  <a class="skip" href="#main">Skip to content</a>
+  <header>
+    <div class="bar">
+      <a class="brand" href="index.html" aria-label="PAPUSZKA home"><img src="assets/symbol.svg" width="25" height="25" alt="">PAPUSZKA</a>
+      <nav id="navigation" aria-label="Primary">
+        <a href="work.html" aria-current="page">Work</a><span aria-disabled="true">About</span><span aria-disabled="true">Contact</span>
+      </nav>
+      <button id="theme" aria-label="Switch to dark theme">Dark</button>
+      <button id="menu" aria-expanded="false" aria-controls="navigation">Menu</button>
+    </div>
+    <div class="progress" aria-hidden="true"></div>
+  </header>
+  <main id="main" tabindex="-1">
+    <div class="work-intro">
+      <h1 class="measured-title"><span>Work</span><i class="dimension width-note" aria-hidden="true"></i><i class="dimension height-note" aria-hidden="true"></i></h1>
+      <p class="work-note">Studies in form and function.</p>
+    </div>
+    <div class="grid catalogue">
+      <article>
+        <a class="project-link" href="ribbed-lamp.html" aria-labelledby="lamp-title">
+          <div class="work-image">
+            <img class="render" src="assets/lamp.png" width="718" height="513" alt="Illuminated ribbed table lamp on a stone plinth.">
+            <div class="frame-width" aria-hidden="true"><span></span></div>
+          </div>
+          <h2 id="lamp-title">Ribbed lamp <span aria-hidden="true">→</span></h2>
+          <p>Lighting</p>
+        </a>
+      </article>
+      <article>
+        <a class="project-link" href="desk-organizer.html" aria-labelledby="organizer-title">
+          <div class="work-image">
+            <img class="render" src="assets/organizer.png" width="612" height="437" alt="Concept visualization of the desk organizer.">
+            <div class="frame-width" aria-hidden="true"><span></span></div>
+          </div>
+          <h2 id="organizer-title">Desk organizer <span aria-hidden="true">→</span></h2>
+          <p>Desk accessories</p>
+        </a>
+      </article>
+      <article>
+        <a class="project-link" href="modular-hub.html" aria-labelledby="hub-title">
+          <div class="work-image">
+            <img class="render" src="assets/hub.png" loading="lazy" width="612" height="437" alt="Concept visualization of the modular hub.">
+            <div class="frame-width" aria-hidden="true"><span></span></div>
+          </div>
+          <h2 id="hub-title">Modular hub <span aria-hidden="true">→</span></h2>
+          <p>Consumer electronics</p>
+        </a>
+      </article>
+    </div>
+  </main>
+  <footer class="row"><a href="#top">Back to top ↑</a><span class="action" aria-disabled="true">Contact →</span></footer>
+</body>
+</html>

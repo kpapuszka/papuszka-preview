@@ -1,0 +1,17 @@
+nav [aria-current="page"] { text-decoration: underline; text-underline-offset: .3em; }
+.catalogue { margin: 0; padding-top: 24px; border-top: 1px solid var(--line); row-gap: 40px; }
+.catalogue h2 { margin-top: 13px; font-size: 1.625rem; }
+.catalogue p { margin-top: 5px; color: var(--secondary); }
+.project-link { display: block; color: var(--ink); }
+.project-link h2 { display: flex; justify-content: space-between; align-items: baseline; }
+.project-link h2 span { color: var(--action); }
+.project-link:hover { text-decoration: none; }
+.project-link:is(:hover, :focus-visible) h2 { text-decoration: underline; text-underline-offset: .2em; }
+.measured-title { justify-self: start; }
+
+main { row-gap: 26px; }
+.work-intro { display: flex; align-items: center; justify-content: space-between; gap: 18px; }
+.work-note { margin: 0; color: var(--secondary); font: 400 .875rem/1.5 var(--mono); }
+@media (max-width: 650px) {
+  .work-intro { align-items: flex-start; flex-direction: column; gap: 8px; }
+}

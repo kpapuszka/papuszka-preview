@@ -59,8 +59,10 @@ function updateMeasurements() {
 }
 
 const featuredImage = document.querySelector('.featured-image');
-const cornerRadius = getComputedStyle(featuredImage.querySelector('.render')).borderTopRightRadius;
-featuredImage.querySelector('.corner-radius span').textContent = 'R' + parseFloat(cornerRadius);
+if (featuredImage) {
+  const cornerRadius = getComputedStyle(featuredImage.querySelector('.render')).borderTopRightRadius;
+  featuredImage.querySelector('.corner-radius span').textContent = 'R' + parseFloat(cornerRadius);
+}
 
 const workSizes = new ResizeObserver(entries => {
   for (const entry of entries) {

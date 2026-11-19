@@ -39,9 +39,8 @@
   const modelPanel = document.querySelector('#model-panel');
   const drawingPanel = document.querySelector('#drawing-panel');
   const initialYaw = 0.22, initialTilt = 0.17;
-  let yaw = initialYaw, tilt = initialTilt, frame = 0;
+  let yaw = initialYaw, tilt = initialTilt;
   function paint() {
-    frame = 0;
     if (modelPanel.hidden || !ctx) return;
     const w = canvas.clientWidth, h = canvas.clientHeight;
     const density = Math.min(window.devicePixelRatio || 1, 2);
@@ -77,35 +76,6 @@
       ctx.closePath(); ctx.fill(); ctx.stroke();
     }
   }
-  function redraw() {
-    if (!frame) frame = requestAnimationFrame(paint);
-  }
-  function orbit(horizontal, vertical) {
-    yaw += horizontal;
-    tilt = Math.max(-1.4, Math.min(1.4, tilt + vertical));
-    redraw();
-  }
-  let drag;
-  canvas.addEventListener('pointerdown', e => {
-    if (e.button !== 0 || drag) return;
-    drag = {id:e.pointerId, x:e.clientX, y:e.clientY};
-    canvas.setPointerCapture(e.pointerId);
-  });
-  canvas.addEventListener('pointermove', e => {
-    if (!drag || drag.id !== e.pointerId) return;
-    orbit((drag.x-e.clientX)*.012,(e.clientY-drag.y)*.012);
-    drag.x=e.clientX; drag.y=e.clientY;
-  });
-  canvas.addEventListener('lostpointercapture', () => { drag = null; });
-  const keys = {ArrowLeft:[-.14,0],ArrowRight:[.14,0],ArrowUp:[0,.12],ArrowDown:[0,-.12]};
-  canvas.addEventListener('keydown', e => {
-    if (keys[e.key]) { e.preventDefault(); orbit(...keys[e.key]); }
-  });
-  document.querySelector('#reset-view').addEventListener('click', () => {
-    yaw=initialYaw; tilt=initialTilt; redraw();
-  });
-  new ResizeObserver(redraw).observe(canvas);
-
   // Front and plan share an orthographic scale and the model's silhouette.
   const drawing = drawingPanel.querySelector('.drawing-geometry');
   const ns = 'http://www.w3.org/2000/svg';
@@ -149,13 +119,8 @@
   label(plan,204,'Ø '+2*maxR);
   label(front,245,'Front elevation'); label(plan,245,'Top view');
 
-  const controls = document.querySelectorAll('[data-view]');
-  controls.forEach(button => button.addEventListener('click', () => {
-    const model = button.dataset.view === 'model';
-    modelPanel.hidden = !model;
-    drawingPanel.hidden = model;
-    controls.forEach(control => control.setAttribute('aria-pressed',String(control===button)));
-    if (model) redraw();
-  }));
-  redraw();
+  bindStudyControls(canvas, paint, (horizontal, vertical) => {
+    yaw += horizontal;
+    tilt = Math.max(-1.4, Math.min(1.4, tilt + vertical));
+  }, () => { yaw = initialYaw; tilt = initialTilt; });
 })();
