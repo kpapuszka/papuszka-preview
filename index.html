@@ -6,15 +6,16 @@
   <title>PAPUSZKA — Industrial Design</title>
   <link rel="icon" href="assets/symbol.svg">
   <link rel="preload" href="assets/plex-sans.ttf" as="font" type="font/ttf" crossorigin>
-  <link rel="stylesheet" href="home.css">
+  <link rel="stylesheet" href="home.css?v=hero-brand-2">
   <script src="navigation.js" defer></script>
-  <script src="home.js" defer></script>
+  <script src="home.js?v=hero-brand-2" defer></script>
+  <script src="water-study.js?v=portfolio-2" defer></script>
 </head>
 <body id="top">
   <a class="skip" href="#main">Skip to content</a>
   <header>
     <div class="bar">
-      <a class="brand" href="#top" aria-label="PAPUSZKA home"><img src="assets/symbol.svg" width="25" height="25" alt="">PAPUSZKA</a>
+      <a class="brand" href="#top" aria-label="PAPUSZKA home"><img src="assets/symbol.svg" width="25" height="25" alt=""><span class="home-brand-name">PAPUSZKA</span></a>
       <nav id="navigation" aria-label="Primary">
         <a href="work.html">Work</a><a href="about.html">About</a><a href="mailto:k.papuszka@gmail.com">Contact</a>
       </nav>
@@ -23,6 +24,14 @@
     </div>
     <div class="progress" aria-hidden="true"></div>
   </header>
+  <section class="water-study" aria-label="PAPUSZKA portfolio">
+    <span class="water-wordmark" aria-hidden="true"><small>Portfolio</small>PAPUSZKA</span>
+    <canvas aria-hidden="true"></canvas>
+    <div class="water-actions">
+      <a href="#main" aria-label="Scroll to portfolio">↓</a>
+      <button type="button" hidden>Pause motion</button>
+    </div>
+  </section>
   <main id="main" tabindex="-1">
     <section class="manifesto" aria-labelledby="manifesto">
       <h1 id="manifesto" class="measured-title"><span>Considered</span> <span>forms</span> <span>for</span> <span>everyday</span> <span>use<b class="period"><i class="period-character">.</i><i class="radius-note" aria-hidden="true"></i></b></span><i class="dimension width-note" aria-hidden="true"></i><i class="dimension height-note" aria-hidden="true"></i></h1>

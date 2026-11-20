@@ -2,9 +2,17 @@ const lamp = new URLSearchParams(location.search).get('lamp') === 'motion'
   ? document.querySelector('.feature-layout .render')
   : null;
 
+const heroWordmark = document.querySelector('.water-wordmark');
 let frame = 0;
 function updateProgress() {
   frame = 0;
+  if (heroWordmark) {
+    const wordmark = heroWordmark.getBoundingClientRect();
+    const overlap = (header.getBoundingClientRect().bottom - wordmark.top) / Math.max(1, wordmark.height);
+    const opacity = reducedMotion.matches ? Number(overlap >= 0.5) : Math.min(1, Math.max(0, overlap));
+    header.style.setProperty('--brand-opacity', String(opacity));
+  }
+  if (reducedMotion.matches) return;
   updateMeasurements();
   const travel = root.scrollHeight - window.innerHeight;
   const progress = travel > 0 ? Math.min(1, Math.max(0, scrollY / travel)) : 0;
@@ -17,15 +25,27 @@ function updateProgress() {
   }
 }
 function requestProgress() {
-  if (!reducedMotion.matches && !frame) frame = requestAnimationFrame(updateProgress);
+  if (!frame && (heroWordmark || !reducedMotion.matches)) frame = requestAnimationFrame(updateProgress);
 }
 window.addEventListener('scroll', requestProgress, { passive: true });
 window.addEventListener('resize', requestProgress);
+window.addEventListener('pageshow', requestProgress);
 reducedMotion.addEventListener('change', requestProgress);
 document.fonts.ready.then(requestProgress);
 
 // Dimensions describe the responsive heading box and its circular full stop.
 const heading = document.querySelector('.measured-title');
+const manifesto = heading.closest('.manifesto');
+if (manifesto && 'IntersectionObserver' in window) {
+  manifesto.classList.add('waiting-for-view');
+  const observer = new IntersectionObserver(([entry]) => {
+    if (entry.isIntersecting) {
+      manifesto.classList.remove('waiting-for-view');
+      observer.disconnect();
+    }
+  });
+  observer.observe(heading);
+}
 const period = heading.querySelector('.period');
 const widthNote = heading.querySelector('.width-note');
 const heightNote = heading.querySelector('.height-note');
