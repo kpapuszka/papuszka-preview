@@ -1,0 +1,51 @@
+nav [aria-current="page"] {
+  text-decoration: underline;
+  text-underline-offset: .3em;
+}
+
+#main {
+  padding-block: clamp(4rem, 14vh, 10rem) clamp(3rem, 8vh, 6rem);
+  gap: clamp(3rem, 9vh, 7rem);
+}
+
+.contact-intro {
+  display: grid;
+  justify-items: start;
+  min-width: 0;
+}
+
+.contact-intro h1 {
+  margin: 0 0 clamp(2rem, 4vw, 4rem);
+  font-size: clamp(2rem, 12vw, 10.5rem);
+  font-weight: 450;
+  line-height: 1;
+  letter-spacing: -.055em;
+  text-transform: uppercase;
+}
+
+.contact-email {
+  max-width: 100%;
+  color: var(--ink);
+  font-size: clamp(1.25rem, 4.8vw, 4.25rem);
+  letter-spacing: -.04em;
+  line-height: 1.25;
+  text-decoration: underline;
+  text-decoration-thickness: .045em;
+  text-underline-offset: .14em;
+}
+
+.contact-email:is(:hover, :focus-visible) { color: var(--action); }
+
+.contact-actions {
+  margin-top: 1rem;
+  font-size: .875rem;
+}
+
+.copy-status { color: var(--secondary); }
+.social-links { display: flex; flex-wrap: wrap; gap: .5rem 1.25rem; }
+.contact-notes { display: flex; flex-wrap: wrap; gap: 2rem clamp(3rem, 8vw, 8rem); }
+.contact-notes h2 {
+  margin-bottom: .7rem;
+  color: var(--secondary);
+  font: .8rem/1.4 var(--mono);
+}
