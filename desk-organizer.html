@@ -35,12 +35,22 @@
     </div>
     <figure class="project-hero">
       <div class="work-image featured-image">
-        <img class="render" src="assets/organizer.png" width="1280" height="960" alt="A graphite tray with two small compartments and a long open recess.">
+        <div class="gallery-track" tabindex="0" role="region" aria-label="Project images">
+          <div class="gallery-slide" data-caption="Concept visualization"><img class="render" src="assets/organizer.png" width="1280" height="960" alt="A graphite tray with two small compartments and a long open recess."></div>
+          <div class="gallery-slide detail" data-caption="Compartment detail" style="--detail-origin: 28% 44%"><img src="assets/organizer.png" alt="Close crop of the two storage compartments." width="1280" height="960"></div>
+          <div class="gallery-slide detail" data-caption="Tray detail" style="--detail-origin: 76% 64%"><img src="assets/organizer.png" alt="Close crop of the long pen tray." width="1280" height="960"></div>
+        </div>
         <div class="frame-width" aria-hidden="true"><span></span></div>
         <div class="frame-height" aria-hidden="true"><span></span></div>
         <span class="corner-radius" aria-hidden="true"><span></span></span>
       </div>
-      <figcaption>Concept visualization</figcaption>
+      <figcaption class="gallery-caption">
+        <span class="gallery-status" aria-live="polite">1 / 3 · Concept visualization</span>
+        <span class="gallery-controls" hidden>
+          <button type="button" data-step="-1" aria-label="Previous image">←</button>
+          <button type="button" data-step="1" aria-label="Next image">→</button>
+        </span>
+      </figcaption>
     </figure>
     <section id="form-study" class="object-study" aria-labelledby="study-title">
       <div class="study-head">

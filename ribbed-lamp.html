@@ -35,12 +35,22 @@
     </div>
     <figure class="project-hero">
       <div class="work-image featured-image">
-        <img class="render" src="assets/lamp.png" width="1280" height="960" alt="Warm light glows between the vertical ribs of a rounded table lamp on a stone plinth.">
+        <div class="gallery-track" tabindex="0" role="region" aria-label="Project images">
+          <div class="gallery-slide" data-caption="Concept visualization"><img class="render" src="assets/lamp.png" width="1280" height="960" alt="Warm light glows between the vertical ribs of a rounded table lamp on a stone plinth."></div>
+          <div class="gallery-slide detail" data-caption="Shade detail" style="--detail-origin: 53% 28%"><img src="assets/lamp.png" alt="Close crop of the vertical ribs around the shade." width="1280" height="960"></div>
+          <div class="gallery-slide detail" data-caption="Foot detail" style="--detail-origin: 53% 78%"><img src="assets/lamp.png" alt="Close crop of the ribs narrowing towards the foot." width="1280" height="960"></div>
+        </div>
         <div class="frame-width" aria-hidden="true"><span></span></div>
         <div class="frame-height" aria-hidden="true"><span></span></div>
         <span class="corner-radius" aria-hidden="true"><span></span></span>
       </div>
-      <figcaption>Concept visualization</figcaption>
+      <figcaption class="gallery-caption">
+        <span class="gallery-status" aria-live="polite">1 / 3 · Concept visualization</span>
+        <span class="gallery-controls" hidden>
+          <button type="button" data-step="-1" aria-label="Previous image">←</button>
+          <button type="button" data-step="1" aria-label="Next image">→</button>
+        </span>
+      </figcaption>
     </figure>
     <section id="form-study" class="object-study" aria-labelledby="study-title">
       <div class="study-head">

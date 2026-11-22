@@ -42,3 +42,35 @@
 .drawing-geometry .dimension-line { stroke: var(--action); stroke-width: .85; }
 .drawing-geometry .axis { stroke: var(--secondary); stroke-dasharray: 6 3 1 3; stroke-width: .65; }
 .drawing-geometry text { stroke: none; fill: var(--ink); font: 11px var(--mono); }
+
+.project-hero, .case-study > * { min-width: 0; }
+.gallery-track {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  overscroll-behavior-x: contain;
+  border-top-right-radius: var(--corner-radius);
+}
+.gallery-slide {
+  flex: 0 0 100%;
+  min-width: 0;
+  overflow: hidden;
+  scroll-snap-align: start;
+}
+.gallery-slide.detail img {
+  transform: scale(1.8);
+  transform-origin: var(--detail-origin);
+}
+.gallery-outgoing {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  border-top-right-radius: var(--corner-radius);
+}
+.gallery-caption, .gallery-controls:not([hidden]) {
+  display: flex;
+  align-items: center;
+  gap: .75rem;
+}
+.gallery-caption { justify-content: space-between; }
+.gallery-controls button { min-width: 44px; min-height: 44px; font-size: 1.4rem; }
