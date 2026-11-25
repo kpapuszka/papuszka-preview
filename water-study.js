@@ -14,13 +14,23 @@
   let inverseInkContrast;
   let visible = false, paused = false;
 
+  const enteredAt = performance.now();
+  let introComplete = motion.matches;
+  let pageColor;
+
+  function fade(elapsed, duration) {
+    const progress = Math.min(1, Math.max(0, elapsed / duration));
+    return progress * progress * (3 - 2 * progress);
+  }
+
   function resize() {
     const scale = Math.min(1, 1100 / canvas.clientWidth);
     w = canvas.width = base.width = Math.max(2, Math.round(canvas.clientWidth * scale));
     h = canvas.height = base.height = Math.max(2, Math.round(canvas.clientHeight * scale));
     r = Math.min(w * .2464, h * .4032, 168);
     const colors = getComputedStyle(canvas);
-    b.fillStyle = colors.getPropertyValue('--page').trim();
+    pageColor = colors.getPropertyValue('--page').trim();
+    b.fillStyle = pageColor;
     b.fillRect(0, 0, w, h);
     b.font = '600 ' + Math.min(w * .135, h * .50) + 'px "IBM Plex Sans", sans-serif';
     b.textAlign = 'center';
@@ -141,7 +151,15 @@ function render(){
    }
  }
  }
- ctx.putImageData(patch,left,top)
+ ctx.putImageData(patch,left,top);
+ if (!introComplete) {
+   const opacity = fade(performance.now() - enteredAt, 1200);
+   ctx.globalAlpha = 1 - opacity;
+   ctx.fillStyle = pageColor;
+   ctx.fillRect(0, 0, w, h);
+   ctx.globalAlpha = 1;
+   introComplete = opacity === 1;
+ }
 }
 
   function frame(now) {
@@ -161,6 +179,10 @@ function render(){
   function sync() {
     cancelAnimationFrame(pending);
     previousPointer = null;
+    if ((paused || motion.matches) && !introComplete) {
+      introComplete = true;
+      render();
+    }
     button.hidden = motion.matches;
     button.textContent = paused ? 'Resume motion' : 'Pause motion';
     if (visible && !document.hidden && !paused && !motion.matches) {

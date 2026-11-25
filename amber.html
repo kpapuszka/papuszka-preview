@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Amber — PAPUSZKA</title>
+  <link rel="icon" href="assets/symbol.svg">
+  <link rel="preload" href="assets/plex-sans.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="stylesheet" href="home.css">
+  <script src="navigation.js" defer></script>
+  <link rel="stylesheet" href="project.css">
+  <script src="home.js" defer></script>
+  <script src="project.js" defer></script>
+  <script src="amber.js" defer></script>
+</head>
+<body id="top">
+  <a class="skip" href="#main">Skip to content</a>
+  <header>
+    <div class="bar">
+      <a class="brand" href="index.html" aria-label="PAPUSZKA home"><img src="assets/symbol.svg" width="25" height="25" alt="">PAPUSZKA</a>
+      <nav id="navigation" aria-label="Primary">
+        <a href="work.html">Work</a><a href="about.html">About</a><a href="contact.html">Contact</a>
+      </nav>
+      <button id="theme" aria-label="Switch to dark theme">Dark</button>
+      <button id="menu" aria-expanded="false" aria-controls="navigation">Menu</button>
+    </div>
+    <div class="progress" aria-hidden="true"></div>
+  </header>
+  <main id="main" class="case-study" tabindex="-1">
+    <div class="project-intro">
+      <a href="work.html">← Back to work</a>
+      <h1 class="measured-title"><span>Amber</span><i class="dimension width-note" aria-hidden="true"></i><i class="dimension height-note" aria-hidden="true"></i></h1>
+      <p class="project-meta">Table lamp / Concept study</p>
+    </div>
+    <figure class="project-hero">
+      <div class="amber-stage">
+        <div class="gallery-track" tabindex="0" role="region" aria-label="Amber images">
+          <div class="gallery-slide" data-caption="Concrete corridor"><img src="assets/projects/amber/corridor.webp" width="1600" height="900" alt="Daylight crosses a concrete corridor with Amber glowing on a bench at the right."></div>
+          <div class="gallery-slide" data-caption="Amber on the bench"><img src="assets/projects/amber/bench.webp" width="1400" height="1050" alt="Amber table lamp on a sculptural concrete bench."></div>
+          <div class="gallery-slide" data-caption="Shade and base"><img src="assets/projects/amber/detail.webp" width="1080" height="1350" alt="Close view of the luminous orange shade and its satin metal base."></div>
+        </div>
+      </div>
+      <figcaption class="gallery-caption">
+        <span class="gallery-status" aria-live="polite">1 / 3 · Concrete corridor</span>
+        <span class="gallery-controls" hidden>
+          <button type="button" data-step="-1" aria-label="Previous image">←</button>
+          <button type="button" data-step="1" aria-label="Next image">→</button>
+        </span>
+      </figcaption>
+      <div class="amber-actions">
+        <button id="amber-toggle" type="button" hidden>Explore in 3D</button>
+        <span id="amber-status" role="status"></span>
+      </div>
+    </figure>
+    <section class="project-section">
+      <h2>Concept</h2>
+      <p>Amber is a reference-based table lamp study. A broad, rounded shade narrows into a cylindrical body. The colour runs almost to the table, where a short band of satin steel catches the light.</p>
+    </section>
+    <section class="project-section">
+      <h2>Process</h2>
+      <p>The profile was modelled in Fusion and brought into Blender to study the amber finish and the reflection along the metal base.</p>
+    </section>
+    <section class="project-section">
+      <h2>Dimensions</h2>
+      <p>Height 250 mm · Shade diameter approx. 200 mm · Base diameter 114 mm</p>
+    </section>
+  </main>
+  <footer class="site-footer">
+    <div class="footer-groups">
+      <div>
+        <a class="footer-wordmark" href="index.html">PAPUSZKA</a>
+        <p>Industrial design · Szczecin, Poland</p>
+      </div>
+      <div>
+        <h2><a href="work.html">Selected work</a></h2>
+        <ul>
+          <li><a href="ribbed-lamp.html">Ribbed lamp</a></li>
+          <li><a href="desk-organizer.html">Desk organizer</a></li>
+          <li><a href="modular-hub.html">Modular hub</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Contact</h2>
+        <a href="mailto:k.papuszka@gmail.com">k.papuszka@gmail.com</a>
+      </div>
+    </div>
+    <div class="footer-base">
+      <small>© 2026 Kacper Papuszka</small>
+      <a href="#top">Back to top ↑</a>
+    </div>
+  </footer>
+</body>
+</html>

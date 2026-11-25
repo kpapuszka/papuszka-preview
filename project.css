@@ -74,3 +74,18 @@
 }
 .gallery-caption { justify-content: space-between; }
 .gallery-controls button { min-width: 44px; min-height: 44px; font-size: 1.4rem; }
+.amber-stage {
+  position: relative;
+  background: linear-gradient(#514b42 40%, #b5a89b);
+}
+.amber-stage img, .amber-stage model-viewer {
+  width: 100%;
+  height: clamp(320px, 68svh, 730px);
+  object-fit: contain;
+  object-position: center;
+}
+.amber-stage model-viewer { display: block; }
+.amber-stage [hidden], .gallery-caption[hidden] { display: none; }
+.amber-actions { display: flex; align-items: baseline; flex-wrap: wrap; gap: 1rem; margin-top: 12px; }
+.amber-actions button { padding-block: 8px; text-decoration: underline; text-underline-offset: .25em; }
+#amber-status { color: var(--secondary); font: .8125rem/1.5 var(--mono); }

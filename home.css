@@ -326,3 +326,8 @@ figcaption p { margin-top: 5px; color: var(--secondary); }
 .manifesto.waiting-for-view .measured-title :is(span, .dimension, .radius-note) { animation-play-state: paused; }
 
 .home-brand-name { opacity: var(--brand-opacity, 0); }
+
+@media (prefers-reduced-motion: no-preference) {
+  .water-wordmark { animation: water-wordmark-entry 1200ms ease-in-out both; }
+  @keyframes water-wordmark-entry { from { opacity: 0; } to { opacity: 1; } }
+}
