@@ -11,7 +11,7 @@
   <link rel="stylesheet" href="project.css">
   <script src="home.js" defer></script>
   <script src="project.js" defer></script>
-  <script src="amber.js" defer></script>
+  <script src="project-viewer.js" defer></script>
 </head>
 <body id="top">
   <a class="skip" href="#main">Skip to content</a>
@@ -32,26 +32,54 @@
       <h1 class="measured-title"><span>Amber</span><i class="dimension width-note" aria-hidden="true"></i><i class="dimension height-note" aria-hidden="true"></i></h1>
       <p class="project-meta">Table lamp / Concept study</p>
     </div>
-    <figure class="project-hero">
-      <div class="amber-stage">
-        <div class="gallery-track" tabindex="0" role="region" aria-label="Amber images">
-          <div class="gallery-slide" data-caption="Concrete corridor"><img src="assets/projects/amber/corridor.webp" width="1600" height="900" alt="Daylight crosses a concrete corridor with Amber glowing on a bench at the right."></div>
-          <div class="gallery-slide" data-caption="Amber on the bench"><img src="assets/projects/amber/bench.webp" width="1400" height="1050" alt="Amber table lamp on a sculptural concrete bench."></div>
-          <div class="gallery-slide" data-caption="Shade and base"><img src="assets/projects/amber/detail.webp" width="1080" height="1350" alt="Close view of the luminous orange shade and its satin metal base."></div>
+    <div class="project-showcase">
+      <div class="project-media">
+        <figure class="project-hero">
+          <div class="work-image featured-image">
+            <div class="gallery-track" tabindex="0" role="region" aria-label="Amber images">
+              <div class="gallery-slide" data-caption="Concrete corridor"><img class="render" src="assets/projects/amber/corridor.webp" width="1600" height="900" alt="Daylight crosses a concrete corridor with Amber glowing on a bench at the right."></div>
+              <div class="gallery-slide" data-caption="Amber on the bench"><img src="assets/projects/amber/bench.webp" width="1400" height="1050" alt="Amber table lamp on a sculptural concrete bench."></div>
+              <div class="gallery-slide" data-caption="Shade and base"><img class="full-object" src="assets/projects/amber/detail.webp" width="1080" height="1350" alt="Close view of the luminous orange shade and its satin metal base."></div>
+            </div>
+            <div class="frame-width" aria-hidden="true"><span></span></div>
+            <div class="frame-height" aria-hidden="true"><span></span></div>
+            <span class="corner-radius" aria-hidden="true"><span></span></span>
+          </div>
+          <figcaption class="gallery-caption">
+            <span class="gallery-status" aria-live="polite">1 / 3 · Concrete corridor</span>
+            <span class="gallery-controls" hidden>
+              <button type="button" data-step="-1" aria-label="Previous image">←</button>
+              <button type="button" data-step="1" aria-label="Next image">→</button>
+            </span>
+          </figcaption>
+        </figure>
+      </div>
+      <p class="project-slogan">A warm glow against cool concrete.</p>
+    </div>
+    <section id="form-study" class="object-study" aria-labelledby="study-title">
+      <div class="study-head">
+        <h2 id="study-title">Form study</h2>
+        <div class="study-switch" role="group" aria-label="Object view">
+          <button type="button" aria-controls="model-panel" aria-pressed="true" data-view="model">3D model</button>
+          <button type="button" aria-controls="drawing-panel" aria-pressed="false" data-view="drawing">Technical drawing</button>
         </div>
       </div>
-      <figcaption class="gallery-caption">
-        <span class="gallery-status" aria-live="polite">1 / 3 · Concrete corridor</span>
-        <span class="gallery-controls" hidden>
-          <button type="button" data-step="-1" aria-label="Previous image">←</button>
-          <button type="button" data-step="1" aria-label="Next image">→</button>
-        </span>
-      </figcaption>
-      <div class="amber-actions">
-        <button id="amber-toggle" type="button" hidden>Explore in 3D</button>
-        <span id="amber-status" role="status"></span>
+      <div class="study-stage" id="model-panel">
+        <model-viewer data-src="assets/projects/amber/amber.glb" alt="Interactive Amber table lamp with a rounded orange shade and satin steel base" camera-controls touch-action="pan-y" interaction-prompt="none" environment-image="neutral" loading="eager" id="project-model"></model-viewer>
+        <div class="study-controls">
+          <span id="model-message" role="status"></span>
+          <button type="button" id="reset-view" hidden>Reset view</button>
+          <button type="button" id="retry-model" hidden>Retry 3D model</button>
+        </div>
       </div>
-    </figure>
+      <div class="study-stage" id="drawing-panel" hidden>
+        <figure class="cad-projections">
+          <img src="assets/projects/amber/orthographic.png" width="1200" height="600" loading="lazy" alt="Front elevation and top view of the Amber lamp at the same scale.">
+          <figcaption><span>Front elevation</span><span>Top view</span></figcaption>
+        </figure>
+        <p class="drawing-key">Height 250 mm · Shade diameter approx. 200 mm · Base diameter 114 mm</p>
+      </div>
+    </section>
     <section class="project-section">
       <h2>Concept</h2>
       <p>Amber is a reference-based table lamp study. A broad, rounded shade narrows into a cylindrical body. The colour runs almost to the table, where a short band of satin steel catches the light.</p>
@@ -61,8 +89,8 @@
       <p>The profile was modelled in Fusion and brought into Blender to study the amber finish and the reflection along the metal base.</p>
     </section>
     <section class="project-section">
-      <h2>Dimensions</h2>
-      <p>Height 250 mm · Shade diameter approx. 200 mm · Base diameter 114 mm</p>
+      <h2>Outcome</h2>
+      <p>The lit shade shifts from pale amber at the crown to a deep orange near the base. Against the concrete bench, the small lamp becomes the focal point of the room.</p>
     </section>
   </main>
   <footer class="site-footer">

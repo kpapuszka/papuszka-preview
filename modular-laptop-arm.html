@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Modular Laptop Arm — PAPUSZKA</title>
+  <link rel="icon" href="assets/symbol.svg">
+  <link rel="preload" href="assets/plex-sans.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="stylesheet" href="home.css">
+  <script src="navigation.js" defer></script>
+  <link rel="stylesheet" href="project.css">
+  <script src="home.js" defer></script>
+  <script src="project.js" defer></script>
+  <script src="project-viewer.js" defer></script>
+</head>
+<body id="top">
+  <a class="skip" href="#main">Skip to content</a>
+  <header>
+    <div class="bar">
+      <a class="brand" href="index.html" aria-label="PAPUSZKA home"><img src="assets/symbol.svg" width="25" height="25" alt="">PAPUSZKA</a>
+      <nav id="navigation" aria-label="Primary">
+        <a href="work.html">Work</a><a href="about.html">About</a><a href="contact.html">Contact</a>
+      </nav>
+      <button id="theme" aria-label="Switch to dark theme">Dark</button>
+      <button id="menu" aria-expanded="false" aria-controls="navigation">Menu</button>
+    </div>
+    <div class="progress" aria-hidden="true"></div>
+  </header>
+  <main id="main" class="case-study" tabindex="-1">
+    <div class="project-intro">
+      <a href="work.html">← Back to work</a>
+      <h1 class="measured-title"><span>Modular</span> <span>Laptop</span> <span>Arm</span><i class="dimension width-note" aria-hidden="true"></i><i class="dimension height-note" aria-hidden="true"></i></h1>
+      <p class="project-meta">Desk accessories / Concept study</p>
+    </div>
+    <div class="project-showcase">
+      <div class="project-media">
+        <figure class="project-hero">
+          <div class="work-image featured-image">
+            <div class="gallery-track" tabindex="0" role="region" aria-label="Modular Laptop Arm images">
+              <div class="gallery-slide" data-caption="Desk installation"><img class="render" src="assets/projects/mla/desk.webp" width="1568" height="1003" alt="A laptop on an articulated silver arm clamped to the edge of a concrete desk."></div>
+              <div class="gallery-slide" data-caption="Side view"><img src="assets/projects/mla/studio.webp" width="1568" height="1003" alt="Side view showing the raised laptop platform, pivot joints and clamp beneath the desktop."></div>
+            </div>
+            <div class="frame-width" aria-hidden="true"><span></span></div>
+            <div class="frame-height" aria-hidden="true"><span></span></div>
+            <span class="corner-radius" aria-hidden="true"><span></span></span>
+          </div>
+          <figcaption class="gallery-caption">
+            <span class="gallery-status" aria-live="polite">1 / 2 · Desk installation</span>
+            <span class="gallery-controls" hidden>
+              <button type="button" data-step="-1" aria-label="Previous image">←</button>
+              <button type="button" data-step="1" aria-label="Next image">→</button>
+            </span>
+          </figcaption>
+        </figure>
+      </div>
+      <p class="project-slogan">Lift the laptop. Free the desk.</p>
+    </div>
+    <section id="form-study" class="object-study" aria-labelledby="study-title">
+      <div class="study-head">
+        <h2 id="study-title">Form study</h2>
+        <div class="study-switch" role="group" aria-label="Object view">
+          <button type="button" aria-controls="model-panel" aria-pressed="true" data-view="model">3D model</button>
+          <button type="button" aria-controls="drawing-panel" aria-pressed="false" data-view="drawing">Technical drawing</button>
+        </div>
+      </div>
+      <div class="study-stage" id="model-panel">
+        <model-viewer data-src="assets/projects/mla/mla.glb" alt="Modular Laptop Arm with its desk clamp, articulated links and laptop platform" camera-controls touch-action="pan-y" interaction-prompt="none" environment-image="neutral" loading="eager" id="project-model"></model-viewer>
+        <div class="study-controls">
+          <span id="model-message" role="status"></span>
+          <button type="button" id="reset-view" hidden>Reset view</button>
+          <button type="button" id="retry-model" hidden>Retry 3D model</button>
+        </div>
+      </div>
+      <div class="study-stage" id="drawing-panel" hidden>
+        <figure class="cad-projections">
+          <img src="assets/projects/mla/orthographic.png" width="1200" height="600" loading="lazy" alt="Front elevation and top view of the Modular Laptop Arm at the same scale.">
+          <figcaption><span>Front elevation</span><span>Top view</span></figcaption>
+        </figure>
+        <p class="drawing-key">In the position shown, the Fusion assembly spans approximately 486 mm in width, 394 mm in depth and 482 mm in height.</p>
+      </div>
+    </section>
+    <section class="project-section">
+      <h2>Concept</h2>
+      <p>A clamp at the edge of the desk carries the laptop above the work surface. The articulated arm brings the screen closer while leaving space beneath the platform for a keyboard.</p>
+    </section>
+    <section class="project-section">
+      <h2>Process</h2>
+      <p>Modelled as an assembly in Autodesk Fusion, the stand connects the desk clamp to the laptop platform through a series of pivot joints. Rotate the model to see how the links meet and how the clamp sits beneath the desktop.</p>
+    </section>
+    <section class="project-section">
+      <h2>Outcome</h2>
+      <p>In the desk study, the laptop sits beside the monitor with room for a keyboard underneath. The clamp and pivot joints remain visible, so the way the platform is supported can be read from the side.</p>
+    </section>
+  </main>
+  <footer class="site-footer">
+    <div class="footer-groups">
+      <div>
+        <a class="footer-wordmark" href="index.html">PAPUSZKA</a>
+        <p>Industrial design · Szczecin, Poland</p>
+      </div>
+      <div>
+        <h2><a href="work.html">Selected work</a></h2>
+        <ul>
+          <li><a href="ribbed-lamp.html">Ribbed lamp</a></li>
+          <li><a href="desk-organizer.html">Desk organizer</a></li>
+          <li><a href="modular-hub.html">Modular hub</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Contact</h2>
+        <a href="mailto:k.papuszka@gmail.com">k.papuszka@gmail.com</a>
+      </div>
+    </div>
+    <div class="footer-base">
+      <small>© 2026 Kacper Papuszka</small>
+      <a href="#top">Back to top ↑</a>
+    </div>
+  </footer>
+</body>
+</html>

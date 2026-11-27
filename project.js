@@ -52,6 +52,7 @@ if (gallery) {
     }
   });
   gallery.addEventListener('scroll', () => {
+    if (!gallery.clientWidth) return;
     const index = current();
     if (destination !== null && Math.abs(gallery.scrollLeft - destination * gallery.clientWidth) < 1) {
       destination = null;
